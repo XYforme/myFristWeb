@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="../assets/css/main_right_tuijian.css">
+</head>
+
+<body>
+    <div class="box">
+        <div class="nowTime">
+            <h2>当前系统时间</h2>
+            <span id="currentTime">11.30.42</span>
+            <i id="current"></i>
+            <div>
+                <label for="">当前秒杀时间</label>
+                <p id="dbtime">2020-9-31 10:00:00</p>
+            </div>
+        </div>
+        <div class="inputTime">
+            <form id="inputForm">
+                <label for="">请输入新的秒杀时间</label>
+                <div>
+                    <input type="text" name="skTime" id="inputTime" placeholder="          例：2020-9-31 10:00:00">
+                </div>
+                <div>
+                    <button type="submit" id="timesubmit">确认提交</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="../assets/vendors/jquery/jquery.min.js"></script>
+    <script src="../assets/js/main_right_tuijian.js"></script>
+</body>
+
+</html>

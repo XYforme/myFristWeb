@@ -1,0 +1,52 @@
+h2 {
+    margin-top: 15px;
+    margin-left: 60px;
+}
+
+.mychoose {
+    margin-top: 20px;
+    margin-left: 120px;
+}
+
+.leftbtn {
+    margin-top: 5px;
+    margin-left: 146px;
+}
+
+.rightimg {
+    height: 100px;
+    width: 100px;
+}
+
+.righttable td,
+.righttable th {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.myinput {
+    margin-top: 20px;
+}
+
+.myupload img {
+    width: 200px;
+    margin-left: 110px;
+}
+
+thead tr {
+    white-space: nowrap;
+    /* color: #fff; */
+}
+
+.dlt,
+.upd {
+    white-space: nowrap;
+}
+
+#rightFromtable {
+    height: 620px;
+}
+
+.current {
+    background-color: #ccc !important;
+}

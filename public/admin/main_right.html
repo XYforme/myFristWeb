@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="../assets/vendors/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/main_right.css">
+</head>
+
+<body>
+
+    <div class="row-fluid">
+        <div class="span4">
+            <form id="uploadForm">
+                <h2>请选择上传的banner</h2>
+                <div class="myupload">
+                    <img src="../assets/image/defaultbanner.jpg" alt="" id="preview">
+                    <input type="file" class="mychoose" id="avatar">
+                    <input type="hidden" name="btype" id="btype" value="banner">
+                    <input type="hidden" name="bpath" id="bpath">
+                    <label for="">请输入跳转链接</label>
+                    <input type="text" name="blink" class="blink" placeholder="          例：www.baidu.com">
+                </div>
+                <button class="leftbtn btn btn-success btn-large" type="submit">确认上传</button>
+            </form>
+        </div>
+        <div class="span8">
+            <table class="table table-bordered righttable">
+                <thead>
+                    <tr>
+                        <th>bannerId</th>
+                        <th>banner内容</th>
+                        <th>banner链接</th>
+                        <th>banner操作</th>
+                    </tr>
+                </thead>
+                <tbody id="btable">
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="../assets/vendors/jquery/jquery.min.js"></script>
+    <script src="../assets/vendors/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../assets/js/main_right.js"></script>
+    <script src="../assets/vendors/art-template/template-web.js"></script>
+    <!-- 文章列表数据模板 -->
+    <script type="text/html" id="bannerTpl">
+        {{each data}}
+        <tr>
+            <td>{{$value._id}}</td>
+            <td><img src="{{$value.bpath}}" class="rightimg"></td>
+            <td>{{$value.blink}}</td>
+            <td>
+                <button class="btn btn-danger dlt btn-large" data-id="{{$value._id}} ">删除</button>
+            </td>
+        </tr>
+        {{/each}}
+    </script>
+
+</body>
+
+</html>

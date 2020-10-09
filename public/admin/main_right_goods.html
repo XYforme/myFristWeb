@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="../assets/vendors/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/main_right_goods.css">
+</head>
+
+<body>
+
+    <div class="row-fluid">
+        <div class="span4" id="parentForm">
+            <form id="uploadForm" class="form-horizontal">
+                <h2>请选择上传的商品图片</h2>
+                <div class="myupload">
+                    <img src="../assets/image/defaultgoods.jpg" alt="" id="preview">
+                    <input type="file" class="mychoose" id="avatar">
+                    <input type="hidden" name="gpath" id="gpath">
+                    <input type="hidden" name="gtype" id="gtype">
+                    <div class="myinput">
+                        <div class="control-group">
+                            <label class="control-label">请输入商品名字</label>
+                            <div class="controls">
+                                <input type="text" name="nickName" id="nickName" placeholder="请输入商品名字">
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">请输入商品价格</label>
+                            <div class="controls">
+                                <input type="text" name="price" id="price" placeholder="请输入商品价格">
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">请输入商品总量</label>
+                            <div class="controls">
+                                <input type="text" name="sum" id="sum" placeholder="请输入商品总量">
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">请输入销量</label>
+                            <div class="controls">
+                                <input type="text" name="sales" id="sales" placeholder="请输入商品销量">
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">请输入跳转链接</label>
+                            <div class="controls">
+                                <input type="text" name="link" id="link" placeholder="例：www.baidu.com">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="leftbtn btn btn-success btn-large" type="submit">确认上传</button>
+            </form>
+        </div>
+        <div class="span8">
+            <div id="rightFromtable">
+                <table class="table table-bordered righttable">
+                    <thead>
+                        <tr>
+                            <th>商品Id</th>
+                            <th>商品图片</th>
+                            <th>商品分类</th>
+                            <th>商品名字</th>
+                            <th>商品价格</th>
+                            <th>商品总量</th>
+                            <th>商品销量</th>
+                            <th>商品链接</th>
+                            <th colspan="2">商品操作</th>
+                        </tr>
+                    </thead>
+                    <tbody id="gtable">
+
+
+                    </tbody>
+
+                </table>
+            </div>
+            <div class="pagination" id="page">
+
+            </div>
+        </div>
+    </div>
+    <script src="../assets/js/public.js"></script>
+    <script src="../assets/vendors/jquery/jquery.min.js"></script>
+    <script src="../assets/vendors/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../assets/js/main_right_goods.js "></script>
+    <script src="../assets/vendors/art-template/template-web.js"></script>
+    <!-- 文章列表数据模板 -->
+    <script type="text/html" id="modifyTpl">
+        <form id="modifyForm" class="form-horizontal">
+            <h2>请选择修改后商品图片</h2>
+            <div class="myupload">
+                <img src="{{gpath}}" alt=" " id="preview">
+                <input type="file" class="mychoose" id="avatar">
+                <input type="hidden" name="gpath" id="gpath" value="{{gpath}}">
+                <input type="hidden" name="gtype" value="{{gtype}}">
+                <div class="myinput">
+                    <div class="control-group">
+                        <label class="control-label">请输入修改后名字</label>
+                        <div class="controls">
+                            <input type="text" name="nickName" value="{{nickName}}">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">请输入修改后价格</label>
+                        <div class="controls">
+                            <input type="text" name="price" value="{{price}}">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">请输入修改后总量</label>
+                        <div class="controls">
+                            <input type="text" name="sum" value="{{sum}}">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">请输入修改后销量</label>
+                        <div class="controls">
+                            <input type="text" name="sales" value="{{sales}}">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">请输入修改后链接</label>
+                        <div class="controls">
+                            <input type="text" name="link" value="{{link}}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="leftbtn btn btn-success btn-large" type="submit ">确认修改</button>
+        </form>
+    </script>
+    <script type="text/html " id="goodsTpl">
+        {{each data}}
+        <tr>
+            <td>{{$value._id}}</td>
+            <td class="rightimg"><img src="{{$value.gpath}}"></td>
+            <td>{{$value.nickName}}</td>
+            <td>{{$value.price}}</td>
+            <td>{{$value.sum}}</td>
+            <td>{{$value.sales}}</td>
+            <td>{{$value.link}}</td>
+            <td>
+                <button class="btn btn-warning upd btn-mini " data-id="{{$value._id}}">修改</button>
+            </td>
+            <td>
+                <button class="btn btn-danger dlt btn-mini " data-id="{{$value._id}}">删除</button>
+            </td>
+        </tr>
+        {{/each}}
+    </script>
+    <script type="text/html " id="pageTpl">
+        {{if pages > 1}}
+        <ul>
+            {{if page > 1}}
+            <li><a href="javascript:;" onclick="changePage({{page-1}})">上一页</a></li>
+            {{/if}} {{each display}}
+            <li><a href="javascript:;" onclick="changePage({{$value}})" class="{{$value == page ? " current " : " "}}">{{$value}}</a></li>
+            {{/each}} {{if page
+            < pages}} <li><a href="javascript:;" onclick="changePage({{page+1}})">下一页</a></li>
+                {{/if}}
+        </ul>
+        {{/if}}
+    </script>
+</body>
+
+</html>

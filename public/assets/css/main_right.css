@@ -1,0 +1,45 @@
+h2 {
+    margin-top: 24px;
+    margin-left: 82px;
+}
+
+.test {
+    margin-left: 100px;
+    width: 100px;
+    height: 100px;
+    background-color: pink;
+}
+
+.myupload {
+    margin-left: 25px;
+}
+
+.mychoose {
+    margin-top: 20px;
+    margin-left: 113px;
+}
+
+.leftbtn {
+    margin-top: 14px;
+    margin-left: 164px;
+}
+
+.rightimg {
+    height: 100px;
+}
+
+.righttable td,
+.righttable th {
+    text-align: center;
+    vertical-align: middle;
+}
+
+label {
+    margin-top: 25px;
+    margin-left: 135px;
+    font-size: 18px;
+}
+
+.blink {
+    margin-left: 88px;
+}

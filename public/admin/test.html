@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" placeholder="请输入邮箱" id="email">
+    <div class="row-fluid">
+        <div class="span4">
+            <form id="userForm">
+                <h2>添加新banner</h2>
+                <div class="form-group">
+                    <label>头像</label>
+                    <div class="form-group">
+                        <label class="form-image">
+              <input id="avatar" type="file">
+              <img src="../assets/img/default.png" id="preview">
+              <i class="mask fa fa-upload"></i>
+            </label>
+                        <input type="hidden" name="avatar" id="hiddenAvatar">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary" type="submit">添加</button>
+                </div>
+            </form>
+        </div>
+        <div class="span8">
+            <div class="page-action">
+                <!-- show when multiple checked -->
+                <a class="btn btn-danger btn-sm" href="javascript:;" style="display: none" id="deleteMany">批量删除</a>
+            </div>
+            <table class="table table-striped table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th class="text-center" width="40">
+                            <input type="checkbox" id="selectAll">
+                        </th>
+                        <th class="text-center" width="80">头像</th>
+                        <th>邮箱</th>
+                        <th>昵称</th>
+                        <th>状态</th>
+                        <th>角色</th>
+                        <th class="text-center" width="100">操作</th>
+                    </tr>
+                </thead>
+                <tbody id="userBox">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+<script>
+    email.onchange = function() {
+        var email = this.value;
+        var reg = /^[A-Za-z\d]+([-_.][A-Za-z\d]+)*@([A-Za-z\d]+[-.])+[A-Za-z\d]{2,4}$/;
+        if (reg.test(email)) {
+            alert("邮箱格式正确");
+        } else {
+            alert("邮箱格式不正确");
+        }
+    }
+</script>
+
+</html>
